@@ -3,20 +3,18 @@ body {
          and use the OS’s UI font as the website font
        */
     font: 100%/1.5 system-ui;
-    max-width: 40ch;
-    margin-inline: max(1em, (100% - 130ch) / 2);
+    max-width: auto;
+    margin-inline: max(1em, (100% - 150ch) / 2);
   }
 
-  nav ul, nav li {
+  ul, li {
     display: contents;
   }
   
 nav{
   display: flex;
-  border-bottom-width: 1px; 
-  border-bottom-style: solid;
-  border-bottom-color: oklch(80% 3% 200);
-  margin-bottom: auto;
+  margin-bottom: 1em;
+  border-bottom: 1px solid oklch(80% 3% 200);
 }
 
 nav a{
@@ -27,7 +25,37 @@ nav a{
   padding: 0.5em;
 }
 
-.equal{
-  border-bottom: 0.4em;
+nav a.current{
+  border-bottom: 0.4em solid oklch(80% 3% 200);
+  font-weight: bold;
 }
 
+html{
+  --color-accent:oklch(65% 50% 0);
+  accent-color: var(--color-accent)
+}
+
+nav a:hover{
+  border-bottom: 0.4em solid var(--color-accent);
+  background-color: oklch(from var(--color-accent) 95% 5% h);
+}
+
+form{
+  font:inherit;
+}
+
+form label{
+  display: block;
+  margin-block: 0.4em;
+}
+
+form input, form textarea, form button{
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+form button{
+  font-size: large;
+  margin-block: 0.4em
+}
