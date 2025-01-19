@@ -11,6 +11,11 @@ body {
     display: contents;
   }
   
+
+h1.title{
+  text-align: center
+}
+
 nav{
   display: flex;
   margin-bottom: 1em;
