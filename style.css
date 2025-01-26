@@ -13,13 +13,14 @@ body {
   
 
 h1.title{
-  text-align: center
+  text-align: center;
 }
 
 nav{
   display: flex;
+  --border-color: oklch(50% 10% 200 / 40%);
   margin-bottom: 1em;
-  border-bottom: 1px solid oklch(80% 3% 200);
+  border-bottom: 1px solid var(--border-color);
 }
 
 nav a{
@@ -32,17 +33,20 @@ nav a{
 
 nav a.current{
   border-bottom: 0.4em solid oklch(80% 3% 200);
+  border-bottom-color: var(--border-color);
   font-weight: bold;
 }
 
 html{
   --color-accent:oklch(65% 50% 0);
-  accent-color: var(--color-accent)
+  accent-color: var(--color-accent);
+  color-scheme: auto;
 }
 
 nav a:hover{
   border-bottom: 0.4em solid var(--color-accent);
   background-color: oklch(from var(--color-accent) 95% 5% h);
+  background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
 }
 
 form{
@@ -57,6 +61,17 @@ form label, form button{
   grid-template-columns: subgrid;
   grid-column: 1 / -1;
 }
+
+form label input{
+  border-color: gray;
+  font-size: medium;
+}
+
+form label textarea{
+  border-color: gray;
+  font-size: medium;
+}
+
 
 form button{
   grid-template-columns: auto;
@@ -90,3 +105,10 @@ form button:hover{
   min-height: 4.5rem;
   text-align: center;
 }
+
+.label color-scheme{
+  font:80%;
+  top:1rem;
+  right:1rem;
+}
+
