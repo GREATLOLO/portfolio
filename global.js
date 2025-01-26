@@ -1,8 +1,8 @@
 console.log('IT’S ALIVE!');
 
-function $$(selector, context = document) {
-  return Array.from(context.querySelectorAll(selector));
-}
+// function $$(selector, context = document) {
+//   return Array.from(context.querySelectorAll(selector));
+// }
 
 // let currentLink = navLinks.find(
 //     (a) => a.host === location.host && a.pathname === location.pathname
@@ -21,7 +21,7 @@ let pages = [
     {url: 'https://github.com/GREATLOLO', title: 'Me'}
   ];
 
-const nav = document.createElement('nav');
+let nav = document.createElement('nav');
 document.body.prepend(nav);
 
 const ARE_WE_HOME = document.documentElement.classList.contains('home');
