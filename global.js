@@ -33,9 +33,10 @@ for (let p of pages) {
     url = !ARE_WE_HOME && !url.startsWith('http') ? '../' + url : url;
     
     let a = document.createElement('a');
+
     a.href = url;
     a.textContent = title;
-    nav.append(a);
+
     a.classList.toggle(
       'current',
       a.host === location.host && a.pathname === location.pathname
@@ -43,6 +44,8 @@ for (let p of pages) {
     if(a.host != location.host){
       a.target = "_blank";
     }
+
+    nav.appendChild(a);
  }
 
 document.body.insertAdjacentHTML(
