@@ -18,7 +18,7 @@ let pages = [
     { url: 'projects/', title: 'Projects' },
     {url: 'resume/', title: 'Resume'},
     {url: 'contact/', title: 'Contact'},
-    {url: 'https://github.com/GREATLOLO', title: 'Me', external:true}
+    {url: 'https://github.com/GREATLOLO', title: 'Me'}
   ];
 
 let nav = document.createElement('nav');
@@ -31,6 +31,8 @@ for (let p of pages) {
     let title = p.title;
     url = !ARE_WE_HOME && !url.startsWith('http') ? '../' + url : url;
 
+    nav.insertAdjacentHTML('beforeend', `<a href="${url}">${title}</a>`);
+    
     let a = document.createElement('a');
     a.href = url;
     a.textContent = title;
