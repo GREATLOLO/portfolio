@@ -31,7 +31,9 @@ for (let p of pages) {
     let url = p.url;
     let title = p.title;
     
-    url = !ARE_WE_HOME && !url.startsWith('http') ? '../' + url : url;
+    if (!ARE_WE_HOME && !url.startsWith('http')) {
+      url = '../' + url;
+    }
     
     let a = document.createElement('a');
 
@@ -46,7 +48,9 @@ for (let p of pages) {
       a.target = "_blank";
     }
 
-    nav.appendChild(a);
+    nav.append(a);
+
+    console.log(url)
  }
 
 document.body.insertAdjacentHTML(
@@ -89,6 +93,8 @@ form?.addEventListener('submit', function (event) {
       }
 
 });
+
+console.log(document.documentElement.classList.contains('home'));
 
 
   
