@@ -14,14 +14,14 @@ function $$(selector, context = document) {
 // }
 
 let pages = [
-    { url: 'portfolio/', title: 'Home' },
-    { url: 'portfolio/projects/', title: 'Projects' },
-    {url: 'portfolio/resume/', title: 'Resume'},
-    {url: 'portfolio/contact/', title: 'Contact'},
+    { url: '', title: 'Home' },
+    { url: 'projects/', title: 'Projects' },
+    {url: 'resume/', title: 'Resume'},
+    {url: 'contact/', title: 'Contact'},
     {url: 'https://github.com/GREATLOLO', title: 'Me'}
   ];
 
-let nav = document.createElement('nav');
+const nav = document.createElement('nav');
 document.body.prepend(nav);
 
 const ARE_WE_HOME = document.documentElement.classList.contains('home');
