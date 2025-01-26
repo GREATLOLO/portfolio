@@ -21,10 +21,11 @@ let pages = [
     {url: 'https://github.com/GREATLOLO', title: 'Me'}
   ];
 
+const ARE_WE_HOME = document.documentElement.classList.contains('home');
+
 let nav = document.createElement('nav');
 document.body.prepend(nav);
 
-const ARE_WE_HOME = document.documentElement.classList.contains('home');
 
 for (let p of pages) {
     let url = p.url;
