@@ -13,7 +13,7 @@ const ARE_WE_HOME = document.documentElement.classList.contains('home');
 // Create and prepend the h1 element
 let h1 = document.createElement('h1');
 h1.classList.add('title');
-h1.textContent = "Keqing Li's Site";
+h1.textContent = "Welcome to Keqing Li's Site";
 document.body.prepend(h1);
 
 // Create and prepend the nav element
