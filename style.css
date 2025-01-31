@@ -5,12 +5,12 @@ body {
     font: 100%/1.5 system-ui;
     max-width: auto;
     margin-inline: max(1em, (100% - 150ch) / 2);
-  }
+    position: relative; /* Ensure the body is positioned relative */
+}
 
-  ul, li {
+ul, li {
     display: contents;
-  }
-  
+}
 
 h1.title{
   text-align: center;
@@ -72,7 +72,6 @@ form label textarea{
   font-size: medium;
 }
 
-
 form button{
   grid-template-columns: auto;
   font-size: large;
@@ -84,14 +83,11 @@ form button:hover{
   background-color: oklch(from var(--color-accent) 95% 5% h);
 }
 
-
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
   grid-row: span 3;
   gap:1em
-
-
 }
 
 .projects article {
@@ -110,5 +106,11 @@ form button:hover{
   font:80%;
   top:1rem;
   right:1rem;
+}
+
+.color-scheme {
+    position: absolute;
+    top: 1em;
+    right: 1em;
 }
 
