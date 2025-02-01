@@ -13,7 +13,7 @@ const ARE_WE_HOME = document.documentElement.classList.contains('home');
 // Create and prepend the h1 element
 let h1 = document.createElement('h1');
 h1.classList.add('title');
-h1.textContent = "Welcome to Keqing Li's Site";
+h1.textContent = "Welcome To Keqing Li's Site";
 document.body.prepend(h1);
 
 // Create and prepend the nav element
@@ -129,4 +129,3 @@ export async function fetchGithubData(username) {
   return fetchJSON(`https://api.github.com/users/${username}`);
 }
 
-fetchGithubData('GREATLOLO').then(data => console.log(data));

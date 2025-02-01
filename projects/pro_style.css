@@ -1,0 +1,21 @@
+#status {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+#status dt {
+    font-weight: bold;
+    text-align: left;
+    padding-right: 10px;
+    grid-row: 1; /* Place all dt elements in the first row */
+}
+
+#status dd {
+    font-size: larger;
+    margin: 0;
+    text-align: left;
+    grid-row: 2; /* Place all dd elements in the second row */
+}
