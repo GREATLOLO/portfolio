@@ -2,26 +2,26 @@
   {
     "title": "Analysis-on-Food-Nutrition-Quality",
     "year": 2025,
-    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-    "description": "Analysis to predict whether a food is good or bad."
+    "image": "../image/adult_eng.jpg",
+    "description": "In this project, we explore two datasets that consist of recipes and user interactions. This enables us to investigate cooking trends, recipe complexity, and user preferences."
   },
   {
     "title": "Analysis on important of league of legends",
     "year": 2025,
-    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-    "description": "Odit dolorum obcaecati sed recusandae enim minima fugiat necessitatibus expedita veritatis sapiente, consectetur officia illo illum quibusdam iure qui repudiandae eaque sint vitae a molestiae? Iste aspernatur at libero a."
+    "image": "../image/league-of-legends.jpg",
+    "description": "In this project, we aimed to explore key in-game metrics to understand performance for each position in League of Legends(LOL). Specifically, we investigated the research question: Which role “carries” (does the best) in their team more often, ADCs (Bot lanes) or Junglers?"
+  },
+  {
+    "title": "Drawing for weather",
+    "year": 2025,
+    "image": "../image/weather.png",
+    "description": "Image that clearly show how rainfall changes over time. With miami and san francisco highlight as lowest and most"
   },
   {
     "title": "My first pull request.",
     "year": 2023,
     "image": "https://vis-society.github.io/labs/2/images/empty.svg",
     "description": "Officiis ipsa excepturi laboriosam non animi enim quos magni impedit! Assumenda, laudantium molestiae!"
-  },
-  {
-    "title": "Drawing for weather",
-    "year": 2025,
-    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-    "description": "Tenetur quae ex dicta incidunt autem atque recusandae explicabo voluptate at qui dolore non in autem."
   },
   {
     "title": "Drawing for mouse movement",
@@ -54,10 +54,10 @@
     "description": "A charming and whimsical illustration of a cat with a wide, joyful smile, capturing the playful and affectionate nature of our feline friends."
   },
   {
-    "title": "Sunt tempora ducimus officiis?",
+    "title": "Confused Cat",
     "year": 2024,
-    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-    "description": "Natus ullam quibusdam suscipit nostrum, illum non recusandae porro saepe velit, voluptatum eaque non?"
+    "image": "../image/confuse-cat.jpg",
+    "description": "An intriguing illustration of a cat with a perplexed expression, capturing the curious and often bewildering nature of feline behavior."
   },
   {
     "title": "blur cat",
