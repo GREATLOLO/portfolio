@@ -1,62 +1,74 @@
 [
   {
-    "title": "Lorem ipsum dolor sit.",
+    "title": "Analysis-on-Food-Nutrition-Quality",
+    "year": 2025,
     "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut distinctio inventore minus, quia labore veniam laborum quae sequi ad rem odio nihil sint quis doloremque aut vel repudiandae, ipsa provident."
+    "description": "Analysis to predict whether a food is good or bad."
   },
   {
-    "title": "Eos voluptatum quisquam ducimus.",
+    "title": "Analysis on important of league of legends",
+    "year": 2025,
     "image": "https://vis-society.github.io/labs/2/images/empty.svg",
     "description": "Odit dolorum obcaecati sed recusandae enim minima fugiat necessitatibus expedita veritatis sapiente, consectetur officia illo illum quibusdam iure qui repudiandae eaque sint vitae a molestiae? Iste aspernatur at libero a."
   },
   {
-    "title": "Quod perferendis non suscipit.",
+    "title": "My first pull request.",
+    "year": 2023,
     "image": "https://vis-society.github.io/labs/2/images/empty.svg",
     "description": "Officiis ipsa excepturi laboriosam non animi enim quos magni impedit! Assumenda, laudantium molestiae!"
   },
   {
-    "title": "Unde molestias quia dolorum.",
+    "title": "Drawing for weather",
+    "year": 2025,
     "image": "https://vis-society.github.io/labs/2/images/empty.svg",
     "description": "Tenetur quae ex dicta incidunt autem atque recusandae explicabo voluptate at qui dolore non in autem."
   },
   {
-    "title": "Dolor nulla repudiandae dolorem.",
+    "title": "Drawing for mouse movement",
+    "year": 2025,
     "image": "https://vis-society.github.io/labs/2/images/empty.svg",
     "description": "Architecto, eaque quia quidem reiciendis asperiores vitae, et aut, reiciendis laboriosam neque totam."
   },
   {
-    "title": "Amet nam consequuntur nemo?",
+    "title": "Editing the framing",
+    "year": 2024,
     "image": "https://vis-society.github.io/labs/2/images/empty.svg",
     "description": "Eligendi ratione autem aperiam ex asperiores pariatur dolores pariatur veritatis molestiae illum! Quos."
   },
   {
-    "title": "Tenetur, sapiente. Minus, voluptates.",
-    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-    "description": "Illum deleniti tempore est ipsa iure officiis voluptates magni! Architecto laudantium beatae illo voluptates?"
+    "title": "wolf jumping over sheep",
+    "year": 2023,
+    "image": "../image/wolf.jpg",
+    "description": "A dynamic illustration capturing the agility and grace of a wolf leaping over a flock of sheep, symbolizing the balance between predator and prey in nature."
   },
   {
-    "title": "Distinctio reprehenderit sed quaerat!",
+    "title": "finding the mininum",
+    "year": 2022,
     "image": "https://vis-society.github.io/labs/2/images/empty.svg",
     "description": "Culpa iste modi inventore, officiis, natus, adipisci assumenda nihil nostrum reiciendis sequi mollitia!"
   },
   {
-    "title": "Fugiat ad numquam nesciunt!",
-    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-    "description": "Maiores quis id omnis fugiat aperiam facilis aliquipore soluta, ut quam numquam, sapiente excepturi."
+    "title": "smiling cat",
+    "year": 2022,
+    "image": "../image/smilecat.jpg",
+    "description": "A charming and whimsical illustration of a cat with a wide, joyful smile, capturing the playful and affectionate nature of our feline friends."
   },
   {
     "title": "Sunt tempora ducimus officiis?",
+    "year": 2024,
     "image": "https://vis-society.github.io/labs/2/images/empty.svg",
     "description": "Natus ullam quibusdam suscipit nostrum, illum non recusandae porro saepe velit, voluptatum eaque non?"
   },
   {
-    "title": "Eveniet fuga ex suscipit?",
-    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-    "description": "Nobis ea sint accusamus repellendus laboriosam omnis to porro blanditiis libero dolores vero qui nemo."
+    "title": "blur cat",
+    "year": 2023,
+    "image": "../image/blurcat.jpg",
+    "description": "A unique artistic depiction of a cat, with blurred lines creating a surreal and dreamy effect, capturing the essence of the feline in a static pose."
   },
   {
-    "title": "Consectetur numquam quam cum.",
-    "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-    "description": "Velit voluptatibus dolorum nisi quae quo id quasi repe reprehenderit odio, neque veniam rerum quasi?"
+    "title": "Scream cat",
+    "year": 2022,
+    "image": "../image/scrycat.jpg",
+    "description": "An expressive and dramatic illustration of a cat mid-scream, capturing the raw emotion and intensity of the moment."
   }
 ]
