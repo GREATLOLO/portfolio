@@ -1,7 +1,6 @@
 [
   {
     "title": "Analysis-on-Food-Nutrition-Quality",
-    "CAL": "C",
     "year":  2025,
     "image": "../image/adult_eng.jpg",
     "description": "In this project, we explore two datasets that consist of recipes and user interactions. This enables us to investigate cooking trends, recipe complexity, and user preferences."

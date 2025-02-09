@@ -10,7 +10,6 @@ renderProjects(latestProjects, projectsContainer, 'h2');
 const githubData = await fetchGithubData('GREATLOLO');
 const profileStats = document.querySelector('#profile-stats');
 
-console.log(githubData);
 if (profileStats) {
     profileStats.innerHTML = `
           <h2>My Github Stats</h2>

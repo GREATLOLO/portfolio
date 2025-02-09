@@ -13,10 +13,23 @@
 <body>
 <h1 class="projects_counts">Projects</h1>
 
-<svg id="projects-pie-plot" viewBox="-50 -50 100 100">
+<div class="container">
+  <svg id="projects-pie-plot" viewBox="-50 -50 100 100">
+    &:has(path:hover) {
+      path:not(:hover) {
+        opacity: 0.5;
+      }
+    }
   </svg>
+  <ul class="legend"></ul> 
+</div>
 
-
+<input
+  class="searchBar"
+  type="search"
+  aria-label="Search projects"
+  placeholder="🔍 Search projects…"
+/>
 <div class="projects">
     
 </div>
