@@ -19,6 +19,7 @@ function renderPieChart(projectsGiven) {
     (d) => d.year,
   );
 
+  let selectedIndex = -1;
   // Re-calculate data
   let data = rolledData.map(([year, count]) => {
     return { value: count, label: year };
@@ -42,7 +43,6 @@ function renderPieChart(projectsGiven) {
   });
 
 
-  let selectedIndex = -1;
   let svg = d3.select('svg');
   svg.selectAll('path').remove();
   arcs.forEach((arc, i) => {
@@ -52,14 +52,26 @@ function renderPieChart(projectsGiven) {
       .attr('fill', colors(i))
       .on('click', () => {
         selectedIndex = selectedIndex === i ? -1 : i;
-        
+        console.log(selectedIndex)
     svg
       .selectAll('path')
       .attr('class', (_, idx) => (
-      idx === selectedIndex ? 'selected' : ''
-
-          ));
-      });
+      idx === selectedIndex ? 'selected' : ''));
+      console.log(projectsGiven[selectedIndex])
+      if (selectedIndex === -1) {
+        // Show all projects when nothing is selected
+        renderProjects(projectsGiven, projectsContainer, 'h4');
+      } else {
+        // Filter projects based on the selected label
+        let selectedLabel = projectsGiven[selectedIndex].year;  // Ensure selection is valid
+        let filteredProjects = projectsGiven.filter(projectsGiven => projectsGiven.year === selectedLabel);
+        
+        // Render only the filtered project
+        renderProjects(filteredProjects, projectsContainer, 'h4');
+      }
+      
+      }
+    );
   });
 
   legend

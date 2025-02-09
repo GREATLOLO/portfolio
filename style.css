@@ -212,4 +212,10 @@ form button:hover{
   &:is(path) {
     fill: var(--color);
   }
+
+}
+
+.selected .swatch {
+  background-color: var(--color) !important;
+  border: 1px solid white; /* Optional: for contrast */
 }
