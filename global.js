@@ -116,6 +116,7 @@ export function renderProjects(project, containerElement,  headingLevel = 'h2') 
     <${headingLevel} id = 'heading'>${p.title}</${headingLevel}>
     <img src="${p.image}" id = 'image' alt="${p.title}">
     <p>${p.description}</p>
+    <div class = 'font'> <p><i>c.</i> ${p.year}</p></div>
     `;
     containerElement.appendChild(article);
   }
@@ -143,4 +144,6 @@ if (profileStats) {
           </dl>
       `;
   }
+
+
 

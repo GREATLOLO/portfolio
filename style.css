@@ -138,3 +138,15 @@ form button:hover{
   text-align: left;
   grid-row: 2; /* Place all dd elements in the second row */
 }
+
+.font{
+  font-variant-numeric: oldstyle-nums;
+  font-family: Baskerville;
+}
+
+#projects-pie-plot {
+  max-width: 20em;
+  margin-block: 2em;
+
+  overflow: visible;
+}
