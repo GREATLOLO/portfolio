@@ -80,12 +80,10 @@ form?.addEventListener('submit', function (event) {
     let link = 'mailto:kel062@ucsd.edu?';
     for (let [name, value] of data) {
         link += `${encodeURIComponent(name)}=${encodeURIComponent(value)}&`;
-        console.log(link);
         location.href = link;
     }
 });
 
-console.log(document.documentElement.classList.contains('home'));
 
 export async function fetchJSON(url) {
   try {

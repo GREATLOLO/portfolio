@@ -212,6 +212,9 @@ form button:hover{
   &:is(path) {
     fill: var(--color);
   }
+  /* &:is(li){
+    fill: var(--color);
+  } */
 
 }
 

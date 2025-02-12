@@ -52,17 +52,22 @@ function renderPieChart(projectsGiven) {
       .attr('fill', colors(i))
       .on('click', () => {
         selectedIndex = selectedIndex === i ? -1 : i;
-        console.log(selectedIndex)
     svg
       .selectAll('path')
       .attr('class', (_, idx) => (
       idx === selectedIndex ? 'selected' : ''));
       console.log(projectsGiven[selectedIndex])
+
+      legend.selectAll('li')
+      .attr('class', (_, idx) => (
+        idx === selectedIndex ? 'selected' : ''));
+      
+
+      console.log(selectedIndex)
       if (selectedIndex === -1) {
-        // Show all projects when nothing is selected
         renderProjects(projectsGiven, projectsContainer, 'h4');
       } else {
-        // Filter projects based on the selected label
+        console.log(projectsGiven)
         let selectedLabel = projectsGiven[selectedIndex].year;  // Ensure selection is valid
         let filteredProjects = projectsGiven.filter(projectsGiven => projectsGiven.year === selectedLabel);
         
@@ -70,16 +75,12 @@ function renderPieChart(projectsGiven) {
         renderProjects(filteredProjects, projectsContainer, 'h4');
       }
       
+
+      
       }
     );
   });
-
-  legend
-    .selectAll('li')
-    .attr('class', (_, idx) => (
-      // TODO: filter idx to find correct legend and apply CSS from above
-      idx === idx === selectedIndex ? 'selected' : '' 
-    ));
+  // console.log(legend)
 
   renderProjects(projectsGiven, projectsContainer, 'h4');
   let count = document.querySelector('.projects_counts');
