@@ -4,13 +4,17 @@ import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm";
 const projects = await fetchJSON('../lib/projects.json');
 
 let query = '';
+
+let projectsContainer = document.querySelector('.projects');
 let arcGenerator = d3.arc().innerRadius(0).outerRadius(50);
 let colors = d3.scaleOrdinal(d3.schemeTableau10);
+
 let searchInput = document.querySelector('.searchBar');
+let year = 0;
+let yearNot = false
 
 // Refactor all plotting into one function
 function renderPieChart(projectsGiven) {
-  let projectsContainer = document.querySelector('.projects');
   
   // Re-calculate rolled data
   let rolledData = d3.rollups(
@@ -65,14 +69,29 @@ function renderPieChart(projectsGiven) {
 
       console.log(selectedIndex)
       if (selectedIndex === -1) {
+        projectsGiven = projectsGiven.filter((projectsGiven) => {
+          let values = Object.values(projectsGiven).join('\n').toLowerCase();
+          return values.includes(query);
+        });
+        let count = document.querySelector('.projects_counts');
+        count.textContent = `${projectsGiven.length} projects`;
         renderProjects(projectsGiven, projectsContainer, 'h4');
+        
+        yearNot = false;
       } else {
-        console.log(projectsGiven)
-        let selectedLabel = projectsGiven[selectedIndex].year;  // Ensure selection is valid
-        let filteredProjects = projectsGiven.filter(projectsGiven => projectsGiven.year === selectedLabel);
+        console.log(data[selectedIndex]['label'])
+        year = data[selectedIndex]['label'];  // Ensure selection is valid
+        let projectsFilter = projectsGiven.filter(projectsGiven => projectsGiven.year === year);
+        projectsFilter = projectsFilter.filter((projectsFilter) => {
+          let values = Object.values(projectsFilter).join('\n').toLowerCase();
+          return values.includes(query);
+        });
+        yearNot = true;
+        let count = document.querySelector('.projects_counts');
+        count.textContent = `${projectsFilter.length} projects`;
         
         // Render only the filtered project
-        renderProjects(filteredProjects, projectsContainer, 'h4');
+        renderProjects(projectsFilter, projectsContainer, 'h4');
       }
       
 
@@ -97,8 +116,12 @@ searchInput.addEventListener('input', (event) => {
     let values = Object.values(project).join('\n').toLowerCase();
     return values.includes(query);
   });
+  if (yearNot){
 
-  renderPieChart(filteredProjects);
+    filteredProjects = filteredProjects.filter(filteredProjects => filteredProjects.year === year);
+  }
+
+  renderPieChart(filteredProjects, projectsContainer, 'h4');
 });
 
  
