@@ -1,4 +1,4 @@
-console.log('IT’S ALIVE!');
+//console.log('IT’S ALIVE!');
 
 let pages = [
     { url: '', title: 'Home' },
