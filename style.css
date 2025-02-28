@@ -12,10 +12,6 @@ ul, li {
     display: contents;
 }
 
-h1.title{
-  text-align: center;
-}
-
 nav{
   display: flex;
   --border-color: oklch(50% 10% 200 / 40%);
@@ -124,7 +120,6 @@ form button:hover{
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
   padding: 20px;
-  background-color: #f9f9f9;
 }
 #status dt {
   font-weight: bold;
@@ -305,3 +300,17 @@ dl.info[hidden]:not(:hover, :focus-within) {
 circle.selected {
   fill: #ff6b6b;
 }
+
+.color_changer{
+  display: flex;
+  justify-content: center;
+  width: auto;
+  height: 200px;
+  align-items: center;
+}
+
+
+h1.title{
+  text-align: center;
+}
+

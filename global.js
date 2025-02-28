@@ -12,14 +12,18 @@ let pages = [
 const ARE_WE_HOME = document.documentElement.classList.contains('home');
 
 // Create and prepend the h1 element
+
+let color_changer = document.createElement('div');
+color_changer.classList.add("color_changer");
 let h1 = document.createElement('h1');
 h1.classList.add('title');
 h1.textContent = "Welcome To Keqing Li's Site";
-document.body.prepend(h1);
+color_changer.appendChild(h1);
+document.body.prepend(color_changer);
 
 // Create and prepend the nav element
 let nav = document.createElement('nav');
-document.body.insertBefore(nav, h1.nextSibling);
+document.body.insertBefore(nav, color_changer.nextSibling);
 
 for (let p of pages) {
     let url = p.url;
