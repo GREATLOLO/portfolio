@@ -3,6 +3,18 @@ let data = [];
 let commits = d3.groups(data, (d) => d.commit);
 let xScale;
 let yScale;
+let selectedCommits = [];
+
+let commitProgress = 100;
+let timeFilter = 0;
+
+const timeSlider = d3.select('#time-slider');
+const selectedTime = d3.select('#selected-time');
+const anyTimeLabel = d3.select('#any-time');
+
+
+
+
 async function loadData() {
     // original function as before
     data = await d3.csv('loc.csv', (row) => ({
@@ -16,6 +28,24 @@ async function loadData() {
   
     displayStats();
     createScatterplot();
+    let timeScale = d3.scaleTime([d3.min(commits, d => d.datetime), d3.max(commits, d => d.datetime)], [0, 100]);
+    let commitMaxTime = timeScale.invert(commitProgress);
+    timeSlider.on('input', () => {
+      updateTimeDisplay();   // First function
+  });
+
+
+  function updateTimeDisplay() {
+    timeFilter = Number(timeSlider.property('value'));  // Get slider value
+    if (timeFilter === 0) {
+      selectedTime.textContent = '';  // Clear time display
+      anyTimeLabel.style.display = 'block';  // Show "(any time)"
+    } else {
+      selectedTime.text(timeScale.invert(timeFilter).toLocaleString());  // Display formatted time
+      anyTimeLabel.style.display = 'none';  // Hide "(any time)"
+    }
+  }
+
 
     
   }
@@ -249,25 +279,28 @@ brushSelector();
     d3.select(svg).selectAll('.dots, .overlay ~ *').raise();
   }
 
+  let brushSelection = null
 
-
-  let brushSelection = null;
-
-  function brushed(event) {
-    brushSelection = event.selection;
-    updateSelection();
-    updateSelectionCount();
-    updateLanguageBreakdown();
-  }
+  function brushed(evt) {
+    brushSelection = evt.selection;
+    selectedCommits = !brushSelection
+      ? []
+      : commits.filter((commit) => {
+          let min = { x: brushSelection[0][0], y: brushSelection[0][1] };
+          let max = { x: brushSelection[1][0], y: brushSelection[1][1] };
+          let x = xScale(commit.date);
+          let y = yScale(commit.hourFrac);
   
-  function isCommitSelected(commit) {
-    if (!brushSelection) {
-      return false;
-    }
-    const min = { x: brushSelection[0][0], y: brushSelection[0][1] }; 
-    const max = { x: brushSelection[1][0], y: brushSelection[1][1] }; 
-    const x = xScale(commit.date); const y = yScale(commit.hourFrac); 
-    return x >= min.x && x <= max.x && y >= min.y && y <= max.y; 
+          return x >= min.x && x <= max.x && y >= min.y && y <= max.y;
+        });
+        updateSelection();
+        updateSelectionCount();
+        updateLanguageBreakdown();
+  }
+
+
+function isCommitSelected(commit) {
+  return selectedCommits.includes(commit);
 }
   
   function updateSelection() {
