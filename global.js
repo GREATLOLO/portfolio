@@ -117,8 +117,10 @@ export function renderProjects(project, containerElement,  headingLevel = 'h2') 
     const article = document.createElement('article');
     let img = p.image;
     if(current == 'Home'){
-      img = img.slice(2)
+      img = img.slice(3)
+      console.log(img)
     }
+
     article.innerHTML = `
     <${headingLevel} id = 'heading'>${p.title}</${headingLevel}>
     <img src="${img}" id = 'image' alt="${p.title}">
