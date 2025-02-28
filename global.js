@@ -45,7 +45,6 @@ for (let p of pages) {
     if(a.host != location.host){
       a.target = "_blank";
     }
-    
     nav.append(a);
 }
 
@@ -109,15 +108,20 @@ export async function fetchJSON(url) {
 
 
 export function renderProjects(project, containerElement,  headingLevel = 'h2') {
-
-
   containerElement.innerHTML = '';
   //For each project, create a new <article> element to hold its details.
+
+  const current = document.querySelector('nav a.current').textContent
+
   for (let p of project) {
     const article = document.createElement('article');
+    let img = p.image;
+    if(current == 'Home'){
+      img = img.slice(2)
+    }
     article.innerHTML = `
     <${headingLevel} id = 'heading'>${p.title}</${headingLevel}>
-    <img src="${p.image}" id = 'image' alt="${p.title}">
+    <img src="${img}" id = 'image' alt="${p.title}">
     <p>${p.description}</p>
     <div class = 'font'> <p><i>c.</i> ${p.year}</p></div>
     `;
