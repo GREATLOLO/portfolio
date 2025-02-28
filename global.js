@@ -118,7 +118,6 @@ export function renderProjects(project, containerElement,  headingLevel = 'h2') 
     let img = p.image;
     if(current == 'Home'){
       img = img.slice(3)
-      console.log(img)
     }
 
     article.innerHTML = `
