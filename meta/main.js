@@ -4,6 +4,7 @@ let commits = d3.groups(data, (d) => d.commit);
 let xScale;
 let yScale;
 let selectedCommits = [];
+let filteredCommits;
 
 let commitProgress = 100;
 let timeFilter = 0;
@@ -11,7 +12,6 @@ let timeFilter = 0;
 const timeSlider = d3.select('#time-slider');
 const selectedTime = d3.select('#selected-time');
 const anyTimeLabel = d3.select('#any-time');
-
 
 
 
@@ -32,8 +32,9 @@ async function loadData() {
     let commitMaxTime = timeScale.invert(commitProgress);
     timeSlider.on('input', () => {
       updateTimeDisplay();   // First function
-  });
 
+  });
+  
 
   function updateTimeDisplay() {
     timeFilter = Number(timeSlider.property('value'));  // Get slider value
@@ -44,7 +45,10 @@ async function loadData() {
       selectedTime.text(timeScale.invert(timeFilter).toLocaleString());  // Display formatted time
       anyTimeLabel.style.display = 'none';  // Hide "(any time)"
     }
+    filteredCommits = d3.filter(commits, d => d.datetime < new Date(timeScale.invert(timeFilter).toLocaleString()));
   }
+
+
 
 
     

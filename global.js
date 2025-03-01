@@ -48,34 +48,6 @@ for (let p of pages) {
     nav.append(a);
 }
 
-// Insert the color scheme selector
-document.body.insertAdjacentHTML(
-    'afterbegin',
-    `
-    <label class="color-scheme">
-        Theme:
-        <select>
-            <option value="auto">Automatic</option>
-            <option value="light">Light</option>
-            <option value="dark">Dark</option>
-        </select>
-    </label>`
-);
-
-const select = document.querySelector('select');
-
-if(localStorage.colorScheme){
-    console.log('Color scheme changed to', localStorage.colorScheme);
-    document.documentElement.style.setProperty('color-scheme', localStorage.colorScheme);
-    select.value = localStorage.colorScheme;
-}
-
-select.addEventListener('input', function (event) {
-  console.log('Color scheme changed to', event.target.value);
-  document.documentElement.style.setProperty('color-scheme', event.target.value);
-  localStorage.colorScheme = event.target.value;
-});
-
 const form = document.querySelector('form');
 
 form?.addEventListener('submit', function (event) {
@@ -117,7 +89,7 @@ export function renderProjects(project, containerElement,  headingLevel = 'h2') 
     const article = document.createElement('article');
     let img = p.image;
     if(current == 'Home'){
-      img = img.slice(3)
+      img = img.slice(3);
     }
 
     article.innerHTML = `
@@ -154,4 +126,30 @@ if (profileStats) {
   }
 
 
+// Insert the color scheme selector
+document.body.insertAdjacentHTML(
+  'afterbegin',
+  `
+  <label class="color-scheme">
+      Theme:
+      <select>
+          <option value="auto">Automatic</option>
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+      </select>
+  </label>`
+);
 
+const select = document.querySelector('select');
+
+if(localStorage.colorScheme){
+  console.log('Color scheme changed to', localStorage.colorScheme);
+  document.documentElement.style.setProperty('color-scheme', localStorage.colorScheme);
+  select.value = localStorage.colorScheme;
+}
+
+select.addEventListener('input', function (event) {
+console.log('Color scheme changed to', event.target.value);
+document.documentElement.style.setProperty('color-scheme', event.target.value);
+localStorage.colorScheme = event.target.value;
+});
