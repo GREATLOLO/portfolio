@@ -1,5 +1,4 @@
 //console.log('IT’S ALIVE!');
-import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm";
 
 let pages = [
   { url: '', title: 'Home' },
@@ -159,26 +158,8 @@ localStorage.colorScheme = event.target.value;
 
 
 // Select the color_changer div
-let svg = d3.select(".color_changer")
-    .append("svg") // Append an SVG element
-    .attr("width", 200) // Set width
-    .attr("height", 50)
-    .attr('id', 'signature'); // Set height
 
 
-
-async function fetchData() {
-  const current = document.querySelector('nav a.current').textContent
-  let data;
-  if(current == 'Home'){
-    data = await fetchJSON("lib/signature.json");
-  }else{
-    data = await fetchJSON("../lib/signature.json");
-  }
-  console.log(data);
-  redrawStoredPaths(data);
-  }
-fetchData();
   
 
 
