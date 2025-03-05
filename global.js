@@ -21,6 +21,7 @@ h1.textContent = "Welcome To Keqing Li's Site";
 color_changer.appendChild(h1);
 let board = document.createElement('div');
 board.classList.add("nice-board");
+board.style.
 color_changer.appendChild(board);   
 document.body.prepend(color_changer);
 
