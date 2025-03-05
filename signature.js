@@ -1,4 +1,4 @@
-import  {fetchJSON} from '/global.js';
+
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm";
 
 let svg = d3.select(".color_changer")
@@ -8,11 +8,25 @@ let svg = d3.select(".color_changer")
     .attr('id', 'signature'); // Set height
 
 
+async function fetchJSON(url) {
+    try {
+        // Fetch the JSON file from the given URL
+        const response = await fetch(url);
+    
+        if (!response.ok) {
+            throw new Error(`Failed to fetch projects: ${response.statusText}`);
+        }
+        const data = await response.json();
+        return data; 
+    
+    } catch (error) {
+        console.error('Error fetching or parsing JSON data:', error);
+    }
+}
 
 async function fetchData() {
     let data = await fetchJSON("lib/signature.json");
 
-    
     redrawStoredPaths(data);
 }
     fetchData();
