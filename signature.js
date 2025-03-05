@@ -1,7 +1,7 @@
 
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm";
 
-let svg = d3.select(".color_changer")
+let svg = d3.select(".heading_space")
     .append("svg") // Append an SVG element
     .attr("width", 200) // Set width
     .attr("height", 50)

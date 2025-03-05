@@ -301,7 +301,7 @@ circle.selected {
   fill: #ff6b6b;
 }
 
-.color_changer{
+.heading_space{
   display: flex;
   justify-content: center;
   flex-direction: column;

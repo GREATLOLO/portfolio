@@ -13,19 +13,19 @@ const ARE_WE_HOME = document.documentElement.classList.contains('home');
 
 // Create and prepend the h1 element
 
-let color_changer = document.createElement('div');
-color_changer.classList.add("color_changer");
+let heading_space = document.createElement('div');
+heading_space.classList.add("heading_space");
 let h1 = document.createElement('h1');
 h1.classList.add('title');
 h1.textContent = "Welcome To Keqing Li's Site";
-color_changer.appendChild(h1); 
-document.body.prepend(color_changer);
+heading_space.appendChild(h1); 
+document.body.prepend(heading_space);
 
 
 
 // Create and prepend the nav element
 let nav = document.createElement('nav');
-document.body.insertBefore(nav, color_changer.nextSibling);
+document.body.insertBefore(nav, heading_space.nextSibling);
 
 for (let p of pages) {
   let url = p.url;
