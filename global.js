@@ -1,4 +1,5 @@
 //console.log('IT’S ALIVE!');
+import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm";
 
 let pages = [
   { url: '', title: 'Home' },
@@ -18,11 +19,8 @@ color_changer.classList.add("color_changer");
 let h1 = document.createElement('h1');
 h1.classList.add('title');
 h1.textContent = "Welcome To Keqing Li's Site";
-color_changer.appendChild(h1);
-let board = document.createElement('div');
-board.classList.add("nice-board");
-board.style.
-color_changer.appendChild(board);   
+
+color_changer.appendChild(h1); 
 document.body.prepend(color_changer);
 
 // Create and prepend the nav element
@@ -160,13 +158,34 @@ localStorage.colorScheme = event.target.value;
 
 
 
+// Select the color_changer div
+let svg = d3.select(".color_changer")
+    .append("svg") // Append an SVG element
+    .attr("width", 200) // Set width
+    .attr("height", 50)
+    .attr('id', 'signature'); // Set height
 
 
-/* function redrawStoredPaths(data) {
-  svg.selectAll("path").remove(); // Clear existing drawing
+
+async function fetchData() {
+  const current = document.querySelector('nav a.current').textContent
+  let data;
+  if(current == 'Home'){
+    data = await fetchJSON("lib/signature.json");
+  }else{
+    data = await fetchJSON("../lib/signature.json");
+  }
+  console.log(data);
+  redrawStoredPaths(data);
+  }
+fetchData();
+  
+
+
+function redrawStoredPaths(data) {
 
   data.forEach((d) => {
-    console.log('yeah?');
+
       let commands = d.d.split(" "); // Split into segments
       let newPath = svg.append("path")
           .attr("stroke", d.color)
@@ -176,7 +195,7 @@ localStorage.colorScheme = event.target.value;
           .attr("stroke-linejoin", "round")
           .attr("d", ""); // Start with an empty path
 
-      let currentD = "" // Start with "M x,y"
+      let currentD = "" 
       let index = 0;
       let interval = d.time / (commands.length / 2); // Set fixed interval (100ms per L)
 
@@ -194,9 +213,7 @@ localStorage.colorScheme = event.target.value;
 
       drawNextSegment(); // Start drawing
   });
-} */
-
-
+}  
 
 
 
