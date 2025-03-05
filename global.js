@@ -18,9 +18,10 @@ color_changer.classList.add("color_changer");
 let h1 = document.createElement('h1');
 h1.classList.add('title');
 h1.textContent = "Welcome To Keqing Li's Site";
-
 color_changer.appendChild(h1); 
 document.body.prepend(color_changer);
+
+
 
 // Create and prepend the nav element
 let nav = document.createElement('nav');
@@ -79,6 +80,10 @@ try {
 }
 
 
+//get the current page
+const current = document.querySelector('nav a.current').textContent
+
+
 
 export function renderProjects(project, containerElement,  headingLevel = 'h2') {
 containerElement.innerHTML = '';
@@ -127,6 +132,7 @@ if (profileStats) {
 }
 
 
+
 // Insert the color scheme selector
 document.body.insertAdjacentHTML(
 'afterbegin',
@@ -157,10 +163,36 @@ localStorage.colorScheme = event.target.value;
 
 
 
-// Select the color_changer div
 
 
-  
+//create button to change background
+let background_button = document.createElement('button');
+background_button.classList.add("background-change");
+let button_image = document.createElement('img');
+button_image.id = "image_background";
+if(current == 'Home'){
+  button_image.src = 'image/background.jpg';
+}else{
+  button_image.src = '../image/background.jpg';
+}
+
+const background_color = ["#4269d0","#efb118","#ff725c","#6cc5b0","#3ca951","#ff8ab7","#a463f2","#97bbf5","#9c6b4e","#9498a0"];
+
+
+const defaultColor = window.getComputedStyle(document.body).backgroundColor;
+let reset = document.createElement('button');
+reset.textContent = "reset background"
+reset.addEventListener('click', function(){
+  document.documentElement.style.setProperty("background-color",defaultColor);
+})
+
+background_button.appendChild(button_image);
+background_button.addEventListener('click', function(){
+  let randomIndex = Math.floor(Math.random() * background_color.length)
+  document.documentElement.style.setProperty("background-color", background_color[randomIndex]);
+})
+document.body.prepend(reset);
+document.body.prepend(background_button);
 
 
 
