@@ -47,7 +47,7 @@ function renderPieChart(projectsGiven) {
   });
 
 
-  let svg = d3.select('svg:not(#signature)');
+  let svg = d3.select('#projects-pie-plot');
   svg.selectAll('path').remove();
   arcs.forEach((arc, i) => {
     svg
