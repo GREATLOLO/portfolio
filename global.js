@@ -178,8 +178,9 @@ if(current == 'Home'){
 
 const background_color = ["#4269d0","#efb118","#ff725c","#6cc5b0","#3ca951","#ff8ab7","#a463f2","#97bbf5","#9c6b4e","#9498a0"];
 
-
+document.documentElement.style.setProperty('color-scheme', 'red & green');
 const defaultColor = window.getComputedStyle(document.body).backgroundColor;
+console.count(defaultColor)
 let reset = document.createElement('button');
 reset.textContent = "reset background"
 reset.addEventListener('click', function(){

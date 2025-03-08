@@ -47,7 +47,7 @@ function redrawStoredPaths(data) {
     
         let currentD = "" 
         let index = 0;
-        let interval = d.time / (commands.length / 2); // Set fixed interval (100ms per L)
+        let interval = d.time / (commands.length / 2); 
     
         function drawNextSegment() {
             if (index >= commands.length) return; // Stop if all segments are drawn
