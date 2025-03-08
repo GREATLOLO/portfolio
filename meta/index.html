@@ -10,15 +10,11 @@
     <script type="module" src="../global.js"></script>
     <script type="module" src="main.js"></script>
     <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="stylesheet" href="metaStyle.css">
 </head>
 <body>
 
-  <div id = "meta-slider">
-    <label style="margin-right: auto;">Show commits until:
-        <input id="time-slider" type="range" min="0" max="100" value="0">
-        <time id="selected-time"></time>
-    </label>
-  </div>
+
 
     <h1> Meta</h1>
     <p> this is the source</p>
@@ -26,9 +22,28 @@
     <div id="status"></div>
 
     <h2>Commits by time of day</h2>
+    <div id = "meta-slider">
+      <label style="margin-right: auto;">Show commits until:
+          <input id="time-slider" type="range" min="0" max="100" value="0">
+          <time id="selected-time"></time>
+      </label>
+    </div>
+
+    <dl class="files">
+
+    </dl>
 
     <p id="selection-count">No commits selected</p>
+
+    <div id="scrollytelling">
+      <div id="scroll-container">
+          <div id="spacer"></div>
+          <div id="items-container"></div>
+      </div>
+
+
 <div id="chart"></div>
+    </div>
 
 
 <dl id="commit-tooltip" class="info tooltip">

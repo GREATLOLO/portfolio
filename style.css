@@ -226,9 +226,10 @@ svg g.gridlines{
 
 
 circle {
-  transition: 200ms;
+  transition: all 200ms, r calc(var(--r) * 100ms);
   transform-origin: center;
   transform-box: fill-box;
+
 }
 
 circle:hover {
@@ -324,3 +325,29 @@ h1.title{
   width: 50px;
   height: 50px;
 }
+
+.files > div {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+}
+
+.line {
+  display: flex;
+  width: 0.5em;
+  aspect-ratio: 1;
+  background: steelblue;
+  border-radius: 50%;
+}
+
+dd {
+  grid-column: 2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  align-content: start;
+  gap: 0.15em;
+  padding-top: 0.6em;
+  margin-left: 0;
+}
+
